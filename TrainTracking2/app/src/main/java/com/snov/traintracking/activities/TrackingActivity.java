@@ -6,11 +6,23 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.snov.traintracking.R;
+import com.snov.traintracking.utilities.Constants;
 
 public class TrackingActivity extends AppCompatActivity {
+
+    TextView Latitude;
+    TextView Longitude;
+
+    private Firebase RefLat;
+    private Firebase RefLong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,5 +78,41 @@ public class TrackingActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
             }
         });
+
+        Firebase.setAndroidContext(this);
+
+        Latitude = (TextView)findViewById(R.id.latitude);
+        Longitude = (TextView)findViewById(R.id.longitude);
+
+
+
+        GetFirebaseData(RefLat,Latitude,"Latitude");
+        GetFirebaseData(RefLong,Longitude,"Longitude");
+
+
+    }
+
+    public void GetFirebaseData(Firebase mRef, final TextView textView, String path){
+        try {
+
+            mRef = new Firebase(Constants.FIREBASE_DATABASE_URL + path);
+
+            mRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String value = dataSnapshot.getValue(String.class);
+                    textView.setText(value);
+                }
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+
+                }
+            });
+
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
     }
 }

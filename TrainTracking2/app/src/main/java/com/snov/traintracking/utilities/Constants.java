@@ -8,4 +8,5 @@ import java.io.Serializable;
 public class Constants implements Serializable {
     //server url
     public static String SERVER_URL = "http://192.168.8.101/RailwaySystem/api.php/";
+    public static String FIREBASE_DATABASE_URL = "https://train-tracking-app.firebaseio.com/train/";
 }
