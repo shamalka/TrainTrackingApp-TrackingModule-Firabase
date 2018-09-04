@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#ffffffff"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="70dp"
+            android:layout_height="86dp"
+            android:layout_weight="1"
+            android:src="@drawable/train_item"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333"
+            android:textSize="22dp"
+            android:text="News Title"
+            android:layout_alignTop="@+id/image"
+            android:layout_toRightOf="@+id/image"
+            android:layout_toEndOf="@+id/image"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333"
+            android:text="Author"
+            android:textSize="14dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/image"
+            android:layout_toEndOf="@+id/image"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333"
+            android:text="Date Posted"
+            android:textSize="14dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/author"
+            android:layout_toRightOf="@+id/image"
+            android:layout_toEndOf="@+id/image"
+            android:layout_marginLeft="5dp"/>
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

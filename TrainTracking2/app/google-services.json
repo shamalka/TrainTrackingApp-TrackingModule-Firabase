@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "274537722943",
+    "firebase_url": "https://train-tracking-app.firebaseio.com",
+    "project_id": "train-tracking-app",
+    "storage_bucket": "train-tracking-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274537722943:android:a2b9e607519bd5b1",
+        "android_client_info": {
+          "package_name": "com.snov.traintracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274537722943-t5btb3ebaf9crqhucj9to2q4ql9frit8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSyW8_GXRQZVcRw3KW_mhjaW6zOTp1Csc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".activities.MainActivity"
+    android:background="@color/CardBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/TrainTrackingView"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="8dp">
+
+            <TextView
+                android:text="Train Tracking"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="35dp"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ReservationView"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="8dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="Ticket Reservation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="35dp"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/NewsFeedView"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="8dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="NEWS Feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="35dp"/>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/FeedbackView"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="8dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="Ratings and Feedbacks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="35dp"/>
+
+        </android.support.v7.widget.CardView>
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

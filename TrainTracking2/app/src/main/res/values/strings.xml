@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Train Tracking And Reservation App</string>
+
+    <string-array name="Start_Station_Array">
+        <item>Anuradhapura</item>
+        <item>Mahawa</item>
+        <item>Kurunegala</item>
+        <item>Polgahawela</item>
+        <item>Ragama</item>
+        <item>Mirigama</item>
+        <item>Maradana</item>
+        <item>Colombo Fort</item>
+    </string-array>
+
+    <string-array name="End_Station_Array">
+        <item>Anuradhapura</item>
+        <item>Mahawa</item>
+        <item>Kurunegala</item>
+        <item>Polgahawela</item>
+        <item>Ragama</item>
+        <item>Mirigama</item>
+        <item>Maradana</item>
+        <item>Colombo Fort</item>
+    </string-array>
+
+
+</resources>
