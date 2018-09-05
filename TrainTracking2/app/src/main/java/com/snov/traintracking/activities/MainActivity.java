@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         TrackingCard.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
-                Intent intent = new Intent(MainActivity.this, TrackingActivity.class);
+                Intent intent = new Intent(MainActivity.this, TrackingTrainListActivity.class);
                 startActivity(intent);
             }
         });

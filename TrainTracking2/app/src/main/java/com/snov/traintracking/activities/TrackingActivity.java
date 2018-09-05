@@ -27,6 +27,7 @@ import android.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.snov.traintracking.R;
+import com.snov.traintracking.utilities.Config;
 import com.snov.traintracking.utilities.Constants;
 
 public class TrackingActivity extends AppCompatActivity {
@@ -51,6 +52,8 @@ public class TrackingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
+
+        Toast.makeText(TrackingActivity.this, Config.TRAIN_ID , Toast.LENGTH_SHORT).show();
 
 
         Spinner StartStationDropDown = (Spinner) findViewById(R.id.Start_Station_DropDown);
@@ -110,14 +113,15 @@ public class TrackingActivity extends AppCompatActivity {
         Longitude = (TextView) findViewById(R.id.longitude);
         LocationData = (TextView) findViewById(R.id.location_data);
 
-        GetFirebaseData(RefLat, Latitude, "Latitude");
-        GetFirebaseData(RefLong, Longitude, "Longitude");
+        GetFirebaseData(RefLat, Latitude, Config.JSON_PATH + "/Latitude");
+        GetFirebaseData(RefLong, Longitude, Config.JSON_PATH + "/Longitude");
 
+        //Toast.makeText(TrackingActivity.this, Constants.FIREBASE_DATABASE_URL + Config.JSON_PATH + "/Latitude" , Toast.LENGTH_SHORT).show();
 
         SendData = (Button) findViewById(R.id.send_button);
 
-        SendRefLatitude = new Firebase("https://train-tracking-app.firebaseio.com/train/Latitude");
-        SendRefLongitude = new Firebase("https://train-tracking-app.firebaseio.com/train/Longitude");
+        SendRefLatitude = new Firebase("https://train-tracking-app.firebaseio.com/" + Config.JSON_PATH + "/Latitude");
+        SendRefLongitude = new Firebase("https://train-tracking-app.firebaseio.com/" + Config.JSON_PATH + "/Longitude");
 //        SendData.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {
 //                SendRefLatitude.setValue("This is Latitude");
@@ -227,5 +231,11 @@ public class TrackingActivity extends AppCompatActivity {
             e.printStackTrace();
 
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        locationManager.removeUpdates(locationListener);
+        finish();
     }
 }

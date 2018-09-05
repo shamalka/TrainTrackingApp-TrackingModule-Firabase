@@ -23,6 +23,7 @@
         <activity android:name=".activities.ReservationActivity" />
         <activity android:name=".activities.NewsActivity" />
         <activity android:name=".activities.FeedbackActivity"></activity>
+        <activity android:name=".activities.TrackingTrainListActivity"></activity>
     </application>
 
 </manifest>
