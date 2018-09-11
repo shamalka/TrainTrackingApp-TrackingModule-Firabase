@@ -32,8 +32,8 @@ import com.snov.traintracking.utilities.Constants;
 
 public class TrackingActivity extends AppCompatActivity {
 
-    TextView Latitude;
-    TextView Longitude;
+    public static TextView Latitude;
+    public static TextView Longitude;
     TextView LocationData;
 
     private Firebase RefLat;
@@ -138,7 +138,7 @@ public class TrackingActivity extends AppCompatActivity {
             @Override
             public void onLocationChanged(Location location) {
                 LocationData.setText(location.getLatitude() + " " + location.getLongitude());
-                SendRefLatitude.setValue(location.getLatitude());
+                SendRefLatitude.setValue(location.getLatitude() + "," + location.getLongitude());
                 SendRefLongitude.setValue(location.getLongitude());
                 //Toast.makeText(TrackingActivity.this, location.getLatitude() + " " + location.getLongitude(), Toast.LENGTH_SHORT).show();
             }
@@ -197,8 +197,8 @@ public class TrackingActivity extends AppCompatActivity {
                 }catch(Exception e){
                     e.printStackTrace();
                 }
-
-
+                Intent intent = new Intent(TrackingActivity.this, MapsActivity.class);
+                startActivity(intent);
 
             }
         });

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         ReservationCard.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
-                Intent intent = new Intent(MainActivity.this, ReservationActivity.class);
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
