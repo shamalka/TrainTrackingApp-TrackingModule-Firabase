@@ -22,15 +22,14 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-import com.google.android.gms.location.FusedLocationProviderClient;
+
 import android.location.LocationListener;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
+
 import com.snov.traintracking.R;
 import com.snov.traintracking.utilities.Config;
 import com.snov.traintracking.utilities.Constants;
 
-public class TrackingActivity extends AppCompatActivity {
+public class SharingActivity extends AppCompatActivity {
 
     public static TextView Latitude;
     public static TextView Longitude;
@@ -51,9 +50,9 @@ public class TrackingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tracking);
+        setContentView(R.layout.activity_sharing);
 
-        Toast.makeText(TrackingActivity.this, Config.TRAIN_ID , Toast.LENGTH_SHORT).show();
+        Toast.makeText(SharingActivity.this, Config.TRAIN_ID , Toast.LENGTH_SHORT).show();
 
 
         Spinner StartStationDropDown = (Spinner) findViewById(R.id.Start_Station_DropDown);
@@ -72,7 +71,7 @@ public class TrackingActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 //Log.v("item", (String) parent.getItemAtPosition(position));
-                Toast.makeText(TrackingActivity.this, "Item " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SharingActivity.this, "Item " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -98,7 +97,7 @@ public class TrackingActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 //Log.v("item", (String) parent.getItemAtPosition(position));
-                Toast.makeText(TrackingActivity.this, "Item " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SharingActivity.this, "Item " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -116,7 +115,7 @@ public class TrackingActivity extends AppCompatActivity {
         GetFirebaseData(RefLat, Latitude, Config.JSON_PATH + "/Latitude");
         GetFirebaseData(RefLong, Longitude, Config.JSON_PATH + "/Longitude");
 
-        //Toast.makeText(TrackingActivity.this, Constants.FIREBASE_DATABASE_URL + Config.JSON_PATH + "/Latitude" , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(SharingActivity.this, Constants.FIREBASE_DATABASE_URL + Config.JSON_PATH + "/Latitude" , Toast.LENGTH_SHORT).show();
 
         SendData = (Button) findViewById(R.id.send_button);
 
@@ -140,7 +139,7 @@ public class TrackingActivity extends AppCompatActivity {
                 LocationData.setText(location.getLatitude() + " " + location.getLongitude());
                 SendRefLatitude.setValue(location.getLatitude() + "," + location.getLongitude());
                 SendRefLongitude.setValue(location.getLongitude());
-                //Toast.makeText(TrackingActivity.this, location.getLatitude() + " " + location.getLongitude(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SharingActivity.this, location.getLatitude() + " " + location.getLongitude(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -192,12 +191,12 @@ public class TrackingActivity extends AppCompatActivity {
         ShareLocation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 try {
-                    //Toast.makeText(TrackingActivity.this, "Show Location", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SharingActivity.this, "Show Location", Toast.LENGTH_SHORT).show();
                     locationManager.requestLocationUpdates("gps",1000,0,locationListener);
                 }catch(Exception e){
                     e.printStackTrace();
                 }
-                Intent intent = new Intent(TrackingActivity.this, MapsActivity.class);
+                Intent intent = new Intent(SharingActivity.this, MapsActivity.class);
                 startActivity(intent);
 
             }

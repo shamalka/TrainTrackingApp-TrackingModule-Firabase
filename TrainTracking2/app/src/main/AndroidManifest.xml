@@ -19,11 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TrackingActivity" />
+        <activity android:name=".activities.SharingActivity" />
         <activity android:name=".activities.ReservationActivity" />
         <activity android:name=".activities.NewsActivity" />
         <activity android:name=".activities.FeedbackActivity" />
-        <activity android:name=".activities.TrackingTrainListActivity" />
+        <activity android:name=".activities.SharingTrainListActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -38,7 +38,9 @@
 
         <activity
             android:name=".activities.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".activities.TrackingHomeActivity" />
+        <activity android:name=".activities.TrackingTrainListActivity"></activity>
     </application>
 
 </manifest>
