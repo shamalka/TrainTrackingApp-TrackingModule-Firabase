@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Train Tracking And Reservation App</string>
+    <string name="app_name">Tain Tracking and Reservation System</string>
 
     <string-array name="Start_Station_Array">
         <item>Anuradhapura</item>
@@ -23,7 +23,7 @@
         <item>Colombo Fort</item>
     </string-array>
     <string name="title_activity_maps">Map</string>
-    <string name="google_maps_key">AIzaSyATumerD6RBBx3pqs2TnEpm8bK8xXT9HDs</string>
+    <string name="google_maps_key">maps api key</string>
 
 
 </resources>
